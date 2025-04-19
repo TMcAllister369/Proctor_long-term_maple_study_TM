@@ -34,4 +34,15 @@ for (d in dates){
   }
 } # end date loop
 
+# Correct dates for a few trees (see comments of data file for reasons) ----
+data$date[data$date == as_date("2025-03-05") & data$tn == 3] <- 
+  as_date("2025-03-06")
+data$date[data$date == as_date("2025-03-19") & data$tn == 3] <- 
+  as_date("2025-03-20")
+trees <- c("871", "873", "874","877", "879", "880", "883", "884", "886", "887", 
+           "888", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH")
+data$date[data$date == as_date("2025-04-03") & data$tree %in% trees ] <- 
+  as_date("2025-04-04")
+
+
 #===============================================================================
